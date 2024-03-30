@@ -14,7 +14,7 @@ remotes::install_github("Winnie09/GPTCelltype")
 ###  🚀 Quick start with Seurat pipeline 
 
 
-```{r eval = FALSE}
+```r
 
 # IMPORTANT! Assign your OpenAI API key. See Vignette for details
 Sys.setenv(OPENAI_API_KEY = 'your_openai_API_key')
