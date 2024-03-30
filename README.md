@@ -1,7 +1,9 @@
 GPTCelltype: Automatic cell type annotation with GPT-4
 ====
 
-## Installation 
+## R
+
+### Installation 
 
 To install the latest version of GPTCelltype package via Github, run the following commands in R:
 ```{r eval = FALSE}
@@ -9,7 +11,7 @@ install.packages("openai")
 remotes::install_github("Winnie09/GPTCelltype")
 ```
 
-##  🚀 Quick start with Seurat pipeline 
+###  🚀 Quick start with Seurat pipeline 
 
 
 ```{r eval = FALSE}
@@ -31,6 +33,21 @@ obj@meta.data$celltype <- as.factor(res[as.character(Idents(obj))])
 
 # Visualize cell type annotation on UMAP
 DimPlot(obj,group.by='celltype')
+```
+
+## Python
+
+```bash
+git clone https://github.com/Yokohide0317/GPTCelltype_py.git
+```
+
+```python
+import scanpy as sc
+from GPTCelltype_py.Py import gptcelltype
+
+rank_genes = sc.get.rank_genes_groups_df(adata, group=None)
+res = gptcelltype.gpt_celltype(rank_genes, tissuename="lung")
+print(res)
 ```
 
 ### ⚠️Warning: avoid sharing your API key with others or uploading it to public spaces.
